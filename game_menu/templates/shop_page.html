@@ -1,0 +1,58 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+
+<header>
+    <div>
+        <div id="logo_text">BLOX FRUITS SHOP</div>
+    </div>
+</header>
+
+<aside>
+    <button id="discord_btn" type="button" title="discord_button" style="margin-top: 120px; margin-left: 0px; border: none; background-color:transparent;">
+        <a href="https://discord.gg/4cbRdNpg"><img src="{% static 'discord.png' %}" width="89%" title="discord_image"></a>
+    </button>
+    <button id="telegram_btn" type="button" title="telegram_button" style="margin-top: 30px; margin-left: 0px; border: none; background-color:transparent;">
+        <a href="https://telegram.org/"><img src="{% static 'telegram.png' %}" width="89%" title="telegram_image"></a>
+    </button>
+    <button id="boost_btn" type="button" title="boost_button" style="margin-top: 30px; margin-left: 0px; border: none; background-color:transparent;">
+        <a href=""><img src="{% static 'shuttle.png' %}" width="83%" title="shuttle_image"></a>
+    </button>
+    <button id="sell_btn" type="button" title="sell_button" style="margin-top: 30px; margin-left: 0px; border: none; background-color:transparent;">
+        <a href=""><img src="{% static 'sell.png' %}" width="89%" title="sell_image"></a>
+    </button>
+    <button id="wiki_btn" type="button" title="wiki_button" style="margin-top: 25px; margin-left: 0.05vw; border: none; background-color:transparent;">
+        <a href="https://blox-fruits.fandom.com/wiki/Blox_Fruits" style="color:white; font-weight: bold; text-decoration: none; font-size:1.5vw;">WIKI</a>
+    </button>
+</aside>
+
+<body>
+    {% block content %}
+        <main>
+            <div id="shop_list">
+                <div id="fruits">
+                    {% for item in fruits %}
+                        <div style="float:left;">
+                            <img src="{{ item.image.url }}" class="images" style="margin-bottom: 15px;">
+                            <br>
+                            <p class="fruits_info" style="line-height: 12px;">{{ item.name }}</p>
+                            <p class="fruits_info" style="line-height: 15px;">{{ item.price }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="advice">
+                <p style="transform: rotate(90deg); font-style: 900; font-size: 1.5vw; font-weight: 750; margin-top: 13vw; line-height: 70px;" class="fruits_info"><nobr>ТУТ МОГЛА БЫТЬ ВАША РЕКЛАМА</nobr></p>
+            </div>
+        </main>
+
+    <footer>
+    </footer>
+    {% endblock %}
+</body>
+
+</html>

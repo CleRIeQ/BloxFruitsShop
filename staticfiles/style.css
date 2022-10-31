@@ -1,0 +1,104 @@
+#main_cap {
+    position: absolute;
+    width: 100%;
+    height: 74px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(90deg, #075D97 0%, rgba(36, 177, 221, 0.62) 36.37%, rgba(232, 48, 8, 0.77) 69.34%);
+}
+
+#left_bar {
+    position: absolute;
+    width: 78px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    float:left;
+
+    background: linear-gradient(180deg, #1D699F 0%, rgba(25, 173, 240, 0.85) 34.38%, rgba(83, 216, 245, 0.35) 70.31%, rgba(84, 239, 239, 0.42) 85.94%);
+
+}
+
+#main_background {
+    margin-top: 74px;
+    margin-left: 70px;
+    display: flex;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* BLOX FRUITS SHOP */
+
+
+#logo_text {
+    font-family: 'Open Sans', sans-serif;
+    font-style: bold;
+    font-weight: 750;
+    font-size: 55px;
+    line-height: 67px;
+    /* identical to box height */
+    text-align: center;
+
+    background: linear-gradient(90deg, #0038FF 0%, rgba(36, 103, 188, 0.97) 39.95%, #E40808 76.5%, rgba(228, 8, 8, 0.47) 109.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    mix-blend-mode: normal;
+    text-shadow: 0px 5px 6px rgba(0, 0, 0, 0.8);
+}
+
+#menu_btn {
+    position: relative;
+    margin-right: 10px;
+    float: right;
+    border:none;
+    background-color: transparent;
+
+}
+
+#shop_list {
+    /* Rectangle 4 */
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 78px;
+    top: 74px;
+
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.4);
+
+
+}
+
+#fruits {
+    position: relative;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.images {
+    width: 70px;
+    height: 70px;
+    title: fruit-icon;
+    float:left;
+    margin-left: 50px;
+}
+
+.fruits_info {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-style: bold;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 50px;
+    color: #383737;
+}
+
+.text_background {
+    background-color: gray;
+}
