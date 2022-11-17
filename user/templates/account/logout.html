@@ -1,0 +1,32 @@
+{% extends "shop_page.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head %}
+<head>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'forms.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+
+    <title>Logout</title>
+</head>
+{% endblock %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+
+
+<form class="form" style="height: 400px;" method="post" action="{% url 'account_logout' %}">
+    <h1 class="login-title">{% trans "Выход" %}</h1>
+    <p class="login-title">{% trans 'Уверены что хотите выйти из аккаунта?' %}</p>
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit">{% trans 'Выход' %}</button>
+</form>
+
+
+{% endblock %}

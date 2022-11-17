@@ -1,13 +1,21 @@
-{% extends "account/base.html" %}
-
+{% extends "shop_page.html" %}
+{% load static %}
 {% load i18n %}
 {% load account socialaccount %}
+{% block head %}
+<head>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'forms.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+{% endblock %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
-<h1>{% trans "Sign In" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
@@ -26,21 +34,18 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 </div>
 
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
+<form class="form" style="height: 600px;" method="POST" action="{% url 'account_login' %}">
+    <h2 class="login-title" style="margin-left: 35%">Вход</h2>
   {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  {% for field in form %}
+    <h5 class="login-title">{{ field.label }}</h5> {{ field }}
+  {% endfor %}
+
+  <a class="button secondaryAction login-title" href="{% url 'account_reset_password' %}">{% trans "Забыли пароль?" %}</a>
+  <button class="primaryAction" type="submit">{% trans "Войти" %}</button>
+    <a href="{{ signup_url }}" class="login-title" style="margin-top: 10%;">Регистрация</a>
 </form>
 
 {% endblock %}

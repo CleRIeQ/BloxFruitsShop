@@ -128,9 +128,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # change deffault allauth forms
 
 ACCOUNT_FORMS = {
-    'login': 'user.forms.LoginForm',
-    'signup': 'user.forms.SignupForm',
+    'login': 'user.forms.MyLoginForm',
+    'signup': 'user.forms.SignUpForm',
+    'reset_password': 'user.forms.PasswordResetForm',
 }
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+ACCOUNT_LOGIN_REDIRECT_URL = "/"
+#ACCOUNT_EMAIL_VERIFICATION = "none"
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'aleksandrsd006@gmail.com'
+EMAIL_HOST_PASSWORD = 'ZSA21245sd'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 # Internationalization
@@ -164,3 +178,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

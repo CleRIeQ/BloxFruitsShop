@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import itemsForSell
+from .models import ItemsForSell, Category
 
-admin.site.register(itemsForSell)
-# Register your models here.
+admin.site.register(ItemsForSell)
+admin.site.register(Category)
